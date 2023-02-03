@@ -1,8 +1,8 @@
 // import important parts of sequelize library
 const { Model, DataTypes } = require('sequelize');
-const { validate } = require('../../../UNB-VIRT-FSF-PT-10-2022-U-LOLC/13-ORM/01-Activities/22-Stu_One-to-One/Unsolved/config/connection');
 // import our database connection from config.js
 const sequelize = require('../config/connection');
+const Category = require('./Category');
 
 // Initialize Product model (table) by extending off Sequelize's Model class
 class Product extends Model {}
