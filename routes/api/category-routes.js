@@ -4,15 +4,15 @@ const { Category, Product } = require('../../models');
 // The `/api/categories` endpoint
 
 router.get('/', async (req, res) => {
-  const categoryData = await Category.findAll().then((products) => {
-    res.json(products);
+  const categoryData = await Category.findAll().then((categories) => {
+    res.json(categories);
   });
 });
 
 router.get('/:id', async (req, res) => {
   const categoryData = await Category.findByPk(req.params.id)
-    .then((product) => {
-      res.json(product);
+    .then((category) => {
+      res.json(category);
     })
 });
 
@@ -30,8 +30,13 @@ router.put('/:id', (req, res) => {
   // update a category by its `id` value
 });
 
-router.delete('/:id', (req, res) => {
-  // delete a category by its `id` value
+router.delete('/:id', async(req, res) => {
+  const categoryData = await Category.destroy({
+    where: {
+      id: req.params.id
+    }
+  })
+  res.json(categoryData);
 });
 
 module.exports = router;

@@ -31,8 +31,13 @@ router.put('/:id', (req, res) => {
   // update a tag's name by its `id` value
 });
 
-router.delete('/:id', (req, res) => {
-  // delete on tag by its `id` value
+router.delete('/:id', async (req, res) => {
+  const tagData = await Tag.destroy({
+    where: {
+      id: req.params.id
+    }
+  })
+  res.json(tagData);
 });
 
 module.exports = router;
