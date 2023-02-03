@@ -3,25 +3,28 @@ const { Tag, Product, ProductTag, Category } = require('../../models');
 
 // The `/api/tags` endpoint
 
-router.get('/', (req, res) => {
-  // find all tags
-  // be sure to include its associated Product data
-  Tag.findAll().then((products) => {
-    res.json(products);
-  });
+router.get('/', async (req, res) => {
+  const tagData = await Tag.findAll()
+    .then((tags) => {
+      res.json(tags);
+    });
 });
 
-router.get('/:id', (req, res) => {
-  // find a single tag by its `id`
-  // be sure to include its associated Product data
-  Tag.findByPk(req.params.id)
-  .then((product) => {
-    res.json(product);
-  })
+router.get('/:id', async (req, res) => {
+  const tagData = await Tag.findByPk(req.params.id)
+    .then((tag) => {
+      res.json(tag);
+    })
 });
 
-router.post('/', (req, res) => {
-  // create a new tag
+router.post('/', async (req, res) => {
+  const tagData = await Tag.create(req.body)
+    .then((newTag) => {
+      res.json(newTag);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
 });
 
 router.put('/:id', (req, res) => {
