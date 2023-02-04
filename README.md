@@ -17,7 +17,7 @@ A tutorial demonstration for this application can be viewed here:
 ![""](./images/)
 
 This project can be used by running 'nodemon server.js' in the command-line or terminal. 
-The databse can be seeded through the command-line or terminal as well using 'node seeds/index.js'.
+The database can be seeded through the command-line or terminal as well using 'node seeds/index.js'.
 
 ## Credits:
 I made this application myself, starting with the provided starter code for the module 13 assignment (the Express.js API). 
