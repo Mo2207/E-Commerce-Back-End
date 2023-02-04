@@ -11,10 +11,10 @@ This project can be cloned into your project.
 
 ## Usage:
 
-A tutorial demonstration for this application can be viewed here: 
+A tutorial demonstration for this application can be viewed here: https://youtu.be/5lFUb8SjfBE
 
-![""](./images/)
-![""](./images/)
+!["associations code"](./images/associations.png)
+!["insomnia picture"](./images/insomnia.png)
 
 This project can be used by running 'nodemon server.js' in the command-line or terminal. 
 The database can be seeded through the command-line or terminal as well using 'node seeds/index.js'.
